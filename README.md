@@ -6,6 +6,7 @@ A simple C library (STM32 HAL) for for reading code from HCS301 433Mhz Keeloq
 Config you RX433 PIN with GPIO_EXTI:
  - External Interrupt Mode with Rising/Falling edge trigger detection;
  - no pull up no pull down.
+ 
 and add NVIC global interrupt for you PIN.
 
 Copy the library header and source file to the appropriate project directories (Inc, Src).
@@ -64,6 +65,7 @@ HCS301 algorithm used from http://arduino.ru/forum/apparatnye-voprosy/biblioteka
 Сконфигурируйте ваш порт и пин куда подключен модуль для приема кодов как порт с внешним прерыванием (GPIO_EXTI):
  - External Interrupt Mode with Rising/Falling edge trigger detection;
  - no pull up no pull down.
+ 
 Включите глобальное прерывание для данного порта (NVIC).
 
 Скопируйте заголовочный и исходный файл библиотеки в соответствующие директории проекта (Inc, Src).
