@@ -1,4 +1,4 @@
-# STM32 HAL library for reading code from HCS301 433Mhz Keeloq
+# Project deprecated and moved to https://github.com/leech001/RF-BARRIER
 
 ## English note
 A simple C library (STM32 HAL) for for reading code from HCS301 433Mhz Keeloq
