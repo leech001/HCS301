@@ -1,42 +1,42 @@
 /*
  * hcs301.h
  *
- *  Created on: Nov 18, 2019
- *      Author: user
+ *  Created on: Jun 1, 2020
+ *      Author: Bulanov Konstantin
+ *
+ *  Contact information
+ *  -------------------
+ *
+ * e-mail   :  leech001@gmail.com
+ *
+ *
  */
 
-#ifndef INC_HCS301_H_
-#define INC_HCS301_H_
+#ifndef MBF401_HCS301_H
+#define MBF401_HCS301_H
 
 #include "main.h"
 
-// ======= Config section =============
+#define RX_PORT         RX433_GPIO_Port
+#define RX_PIN          RX433_Pin
 
-#define HCS_RECIEVER_PORT	GPIOC
-#define HCS_RECIEVER_PIN  	GPIO_PIN_15
-
-// ====================================
-
-#define	HCS_TE		400
-#define	HCS_Te2_3	600
+#define TX_PORT         TX433_GPIO_Port
+#define TX_PIN          TX433_Pin
 
 typedef struct {
-	uint8_t Repeat;
-	uint8_t BatteryLow;
-	uint8_t Btn2;
-	uint8_t Btn1;
-	uint8_t Btn0;
-	uint8_t Btn3;
-	uint32_t SerialNum;
-	uint32_t Encrypt;
+    uint8_t Repeat;
+    uint8_t BatteryLow;
+    uint8_t Btn0;
+    uint8_t Btn1;
+    uint8_t Btn2;
+    uint8_t Btn3;
+    uint32_t SerialNum;
+    uint32_t Encrypt;
+    uint64_t code;
 } HCS301_t;
 
-uint8_t		HCS_preamble_count;
-uint32_t	HCS_last_change;
-uint8_t		HCS_bit_counter;
-uint8_t		HCS_bit_array[66];
+uint8_t HCS301_Int();
 
-void HCS_interrupt(HCS301_t* data);
+void HCS301_Send(uint64_t code);
 
-
-#endif /* INC_HCS301_H_ */
+#endif //MBF401_HCS301_H
